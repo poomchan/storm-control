@@ -77,6 +77,8 @@
 (5) Add the storm_control directory to your Python path by placing a .pth file in 
  the python site-packages directory, e.g. venv_dir/lib/site-packages.
  An example .pth file is included as hal4000/storm_control.pth.  
+
+search-ms:displayname=Search%20Results%20in%20ASUS%20GL552VX&crumb=location:C%3A%5CUsers%5CASUS%20GL552VX\site-packages
  
  
 (6) Create data & logs directories:
@@ -98,6 +100,10 @@
  xml/none_config.xml specifies how to configure HAL to run the 'none' (or
  emulated) setup. Other example configurations can be found in the
  hal4000/xml directory.
+
+-----
+
+Don't forget to run in Anaconda command promt with "myenv" activated
 
 
 (8) Modifying to work with your hardware:
