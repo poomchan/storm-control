@@ -9,6 +9,8 @@
  */
 
 /* Include */
+#define _USE_MATH_DEFINES
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>

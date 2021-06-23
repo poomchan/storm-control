@@ -40,12 +40,16 @@
 (3-4) Note: You should be able to skip the next two steps if you
  are running 64 bit windows as the compiled files are now included in
  the project.
-
+// still need to do them
 
 (3) Compile UI elements (in the qtdesigner folder):
  With PyQt you should get a program installed called pyuic.py. This
  should be in your path if you are using a virtual environment and
  it is activated.
+
+// I just go to the folder and run "$python camera_params_ui.py" and so on
+// Or run this script on the shell (credit to Yuan)
+// $ FOR /f "tokens=*" %G IN ('dir /b *.ui') DO ( python -m PyQt5.uic.pyuic -x %G -o %~nG_ui.py )
 
  (a) camera-params.ui > camera_params_ui.py
  (b) camera-display.ui > camera_display_ui.py
@@ -73,12 +77,29 @@
  $ cd /path/to/storm_control
  $ scons
 
+// I tried running the command but has errors (Visual Studio is not found) so..
+
+// I did $ pip install scons
+// then downloaded and install visual studio community 2019
+// install Windows C/C++ developmet directly from VS studio work load (I installed them all cause I dont know which is just). 
+// This solved the problem. But, new errors.
+// storm_control\sc_hardware\utility\af_lock.c(565): error C2065: 'M_PI': undeclared identifier
+// thanks to Yuan: Add the following line to the header of the file
+// #define _USE_MATH_DEFINES
+//
+// then error: dll file not recognized: File format not recognized
+// install MinGW by MSYS *must be 64 bit* 
+// follow here: https://stackoverflow.com/questions/30069830/how-to-install-mingw-w64-and-msys2
+// add gcc to the path
+// run $ scons -Q compiler=mingw
+
+
 
 (5) Add the storm_control directory to your Python path by placing a .pth file in 
  the python site-packages directory, e.g. venv_dir/lib/site-packages.
  An example .pth file is included as hal4000/storm_control.pth.  
 
-search-ms:displayname=Search%20Results%20in%20ASUS%20GL552VX&crumb=location:C%3A%5CUsers%5CASUS%20GL552VX\site-packages
+// the path is C:\Users\ASUS GL552VX\anaconda3\envs\myenv\Lib\site-packages
  
  
 (6) Create data & logs directories:

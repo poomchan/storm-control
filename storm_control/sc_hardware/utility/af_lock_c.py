@@ -4,6 +4,7 @@ Fitting for offset using the autofocus lock.
 
 Hazen 09/19
 """
+
 import ctypes
 import numpy
 from numpy.ctypeslib import ndpointer
@@ -12,7 +13,6 @@ import scipy.misc
 import scipy.optimize
 
 import storm_control.c_libraries.loadclib as loadclib
-
 
 # Load C library.
 af = loadclib.loadCLibrary("af_lock")
